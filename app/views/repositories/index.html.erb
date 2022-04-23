@@ -1,0 +1,5 @@
+<%= form_with url: repositories_search_path, method: :post do |form| %>
+  <%= form.search_field :search_term %>
+<% end %>
+
+<div id="search_result">initial result</div>
