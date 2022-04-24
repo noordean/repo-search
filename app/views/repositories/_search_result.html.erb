@@ -1,4 +1,4 @@
 <% repositories.each do |repo| %>
   <br />
-  <%= repo["name"] %>
+  <%= link_to repo["name"], repo["html_url"], target: "_blank" %>
 <% end %>

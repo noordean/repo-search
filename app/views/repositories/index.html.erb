@@ -1,5 +1,9 @@
 <%= form_with url: repositories_search_path, method: :post, data: { controller: "debounce", debounce_target: "form" } do |form| %>
-  <%= form.search_field :search_term, placeholder: "Type a search term", autocomplete: "off", data: { action: "input->debounce#search" } %>
+  <%= form.search_field :search_term,
+                        placeholder: "Type a search term",
+                        autocomplete: "off",
+                        data: { action: "input->debounce#search" },
+                        style:"outline: none;border: 1px solid #bbb;border-radius: 20px;padding: 10px;width: 300px;margin: 15px 0;" %>
 <% end %>
 
-<div id="search_result">Search results will be displayed here</div>
+<div id="search_result"><%= render "no_search_term" %></div>
