@@ -1,5 +1,5 @@
-<%= form_with url: repositories_search_path, method: :post do |form| %>
-  <%= form.search_field :search_term, oninput: "this.form.requestSubmit()" %>
+<%= form_with url: repositories_search_path, method: :post, data: { controller: "debounce", debounce_target: "form" } do |form| %>
+  <%= form.search_field :search_term, data: { action: "input->debounce#search" } %>
 <% end %>
 
 <div id="search_result">initial result</div>
